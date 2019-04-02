@@ -24,7 +24,7 @@ It also handles reading from standard input/output.</p>
     <p> <code>1</code> Whenever the reading from the file descriptor was succesfull and there is a valid buffer stored into <i><b>line.</b></i></p>
   </il>
   <il>
-    <p><code>0</code> Whenever the reading from the file descriptor was succesfull but there is nothing left to read from a the file descriptor.</p>
+    <p><code>0</code> Whenever the reading from the file descriptor was succesfull but there is nothing left to read from the file descriptor.</p>
   </il>
   <il>
     <p><code>-1</code> When the reading from the file descriptor was unsuccesfull as an <b>error</b> management solution.</p>
