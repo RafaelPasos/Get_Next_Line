@@ -6,13 +6,13 @@
 /*   By: apasos-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 19:11:41 by apasos-g          #+#    #+#             */
-/*   Updated: 2019/02/19 21:08:22 by apasos-g         ###   ########.fr       */
+/*   Updated: 2019/04/01 21:53:30 by apasos-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*getdaline(char **rem, char **buffers)
+char	*gettheline(char **rem, char **buffers)
 {
 	char	*line;
 	char	*ptr;
@@ -52,42 +52,13 @@ void	reading(char **rem, int fd)
 	}
 }
 
-void	readingone(char **rem, int fd)
-{
-	char	bf[BUFF_SIZE + 1];
-	char	*temp;
-	char	v;
-	int		readn;
-
-	ft_bzero(bf, BUFF_SIZE);
-	readn = BUFF_SIZE;
-	v = '.';
-	while ((v != '\n') && readn == BUFF_SIZE)
-	{
-		readn = read(fd, bf, BUFF_SIZE);
-		bf[readn] = '\0';
-		v = bf[0];
-		temp = *rem;
-		*rem = ft_strjoin(*rem, bf);
-		free(temp);
-	}
-	if (readn == 0 && (*rem)[0] == '\0')
-	{
-		free(*rem);
-		*rem = NULL;
-	}
-}
-
 int		readfile(char **rem, char **line, char **buffers, int fd)
 {
-	if (BUFF_SIZE == 1)
-		readingone(rem, fd);
-	else
-		reading(rem, fd);
+	reading(rem, fd);
 	if (*rem == NULL)
 		return (0);
 	if (ft_strchr(*rem, '\n'))
-		*line = getdaline(rem, buffers);
+		*line = gettheline(rem, buffers);
 	else
 		*line = ft_strdup(*rem);
 	free(*rem);
@@ -107,7 +78,7 @@ int		get_next_line(int fd, char **line)
 		rem = ft_strdup(buffers[fd]);
 		free(buffers[fd]);
 		buffers[fd] = NULL;
-		*line = getdaline(&rem, &buffers[fd]);
+		*line = gettheline(&rem, &buffers[fd]);
 		free(rem);
 		return (1);
 	}
