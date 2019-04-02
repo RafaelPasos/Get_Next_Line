@@ -18,7 +18,7 @@ int	get_next_line(const int fd, char **line);
 This function also has multiple file descriptors support for reading from multiple file descriptors simultaneously without loosing the thread it was on for each file descriptor.
 It also handles reading from standard input/output.</p>
 <h4>Return Values</h4>
-get_next_line returns an integer indicating the status of the line read from the file descriptor
+<p>get_next_line returns an integer indicating the status of the line read from the file descriptor</p>
 <ul>
   <il>
     <p> <code>1</code> Whenever the reading from the file descriptor was succesfull and there is a valid buffer stored into <i><b>line.</b></i></p>
