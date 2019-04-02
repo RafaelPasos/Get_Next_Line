@@ -21,12 +21,12 @@ It also handles reading from standard input/output.</p>
 get_next_line returns an integer indicating the status of the line read from the file descriptor
 <ul>
   <il>
-    <b>1</b> Whenever the reading from the file descriptor was succesfull and there is a valid buffer stored into <i>line</i>.
+    <p> <code>1</code> Whenever the reading from the file descriptor was succesfull and there is a valid buffer stored into <i><b>line.</b></i></p>
   </il>
   <il>
-    <b>0</b> Whenever the reading from the file descriptor was succesfull but there is nothing left to read from a the file descriptor.
+    <p><code>0</code> Whenever the reading from the file descriptor was succesfull but there is nothing left to read from a the file descriptor.</p>
   </il>
   <il>
-    <b>-1</b> When the reading from the file descriptor was unsuccesfull as an <b>error</b> management solution.
+    <p><code>-1</code> When the reading from the file descriptor was unsuccesfull as an <b>error</b> management solution.</p>
   </il>
 </ul>
