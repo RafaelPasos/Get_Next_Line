@@ -13,5 +13,5 @@ The buffer is null-terminated and does <b>not</b> include the newline character.
 <code>
 int	get_next_line(const int fd, char **line);
 </code>
-This function also has multiple file descriptors support for reading from multiple file descriptors simultaneously without loosing the thread it was on for each file descriptor.
-It also handles reading from standard input/output.
+<p>This function also has multiple file descriptors support for reading from multiple file descriptors simultaneously without loosing the thread it was on for each file descriptor.
+It also handles reading from standard input/output.</p>
